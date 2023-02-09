@@ -1,0 +1,136 @@
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 10px 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.mainDivTracks{
+    padding-top: 100px;
+    padding-left: 20px;
+}
+
+.inputSearch{
+    margin-bottom: 40px;
+    margin-right: 5%;
+    width: 25%;
+    height: 40px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    display: inline-block;
+}
+
+.inputLabel{
+    margin-top: 20px;
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+
+.inputNum{
+    margin-bottom: 40px;
+    margin-left: 20px;
+    width: 20%;
+    height: 30px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    font-size: larger;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    color: black;
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.collapsible li#trackID:hover span {
+    display: none;
+}
+
+.collapsible li#trackID:hover:before {
+    font-size: 13px;
+    content: "▶";
+}
+
+.collapsible li#trackID {
+    float: left;
+    text-align: center;
+    width: 9%;
+}
+
+.collapsible li#trackTitle {
+    float: left;
+    width: 43%;
+}
+
+.collapsible li#artistName {
+    float: left;
+    width: 43%;
+}
+
+.collapsible li#trackDuration {
+    float: left;
+    width: 5%;
+}
+
+.content {
+    padding: 0px 10px;
+}
+
+.content li#albumID {
+    float: left;
+    width: 15%;
+}
+
+.content li#albumName {
+    float: left;
+    width: 35%;
+}
+
+.content li#artistID {
+    float: left;
+    width: 15%;
+}
+
+.content li#artistName {
+    float: left;
+    width: 35%;
+}
+
+.content li#trackGenres {
+    width: 100%;
+}
+
+.content li#trackTags {
+    width: 100%;
+}
+
+.content li#trackDateCreated {
+    float: left;
+    width: 50%;
+}
+
+.content li#trackDateRecorded {
+    float: left;
+    width: 50%;
+}

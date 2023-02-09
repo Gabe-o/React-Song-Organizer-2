@@ -1,0 +1,9 @@
+.paragraph{
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+
+.defaultMargin{
+    margin-left: 20px;
+}

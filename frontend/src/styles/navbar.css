@@ -1,0 +1,31 @@
+nav {
+    width: 100%;
+}
+
+nav ul {
+    padding: 10px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li {
+    float:left;
+    margin-right: 0.5em;
+    font-size: large;
+}
+
+.navBarB {
+    background: none;
+    border: none;
+    color: #F0A202;
+    font-size: larger;
+}
+
+.navBarDiv{
+    width: 100%;
+    background-color: #004E89;
+}
+
+.welcomeh1{
+    padding: 10px;
+}

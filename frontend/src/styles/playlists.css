@@ -1,0 +1,20 @@
+div.playlistSearch input {
+    margin: 20px;
+}
+
+div.mainPlaylistDiv{
+    margin-top: 7%;
+}
+
+.inputButton{
+    margin-top: 20px;
+    width: 25%;
+    height: 40px;
+    font-size: large;
+    border-radius: 15px;
+    border: none;
+}
+
+.playlistInfodiv{
+    background-color: #FCBA04;
+}

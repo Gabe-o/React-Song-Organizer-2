@@ -1,0 +1,23 @@
+.dcmaButton {
+    width: 22%;
+    height: 60px;
+    font-size: large;
+    margin-left: 20px;
+    border-radius: 15px;
+    border: none;
+}
+
+.submitButton {
+    width: 35%;
+    height: 40px;
+    font-size: large;
+    border-radius: 15px;
+    border: none;
+}
+
+.dmcaP{
+    margin-left: 20px;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}

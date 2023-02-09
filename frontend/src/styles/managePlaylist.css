@@ -1,0 +1,50 @@
+div.selectBox {
+    float: left;
+    margin-left: 10px;
+}
+
+div.playlistBox {
+    float: left;
+    width: 100%;
+}
+
+div.tracksBox {
+    display: inline-block;
+    width: 50%;
+}
+
+div.playlistSide {
+    display: inline-block;
+    float: left;
+    margin-top: 7%;
+    width: 50%;
+    height: 100vw;
+}
+
+div.managePlaylists {
+    margin-top: 2.5%;
+}
+
+.cH1 {
+    margin: 2%;
+}
+
+.playlistSearch {
+    margin-bottom: 40px;
+    width: 70%;
+    height: 40px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    display: inline-block;
+}
+
+.addButton{
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+i{
+    color: yellow;
+}

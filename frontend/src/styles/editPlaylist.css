@@ -1,0 +1,41 @@
+div.editPlaylist {
+    padding: 1%
+}
+
+h1 {
+    margin: 0 0 1% 0;
+}
+
+textarea.description {
+    margin: 0 0 1% 0;
+    width: 90%;
+    resize: none;
+}
+
+div.trackListItem {
+    overflow: auto;
+    clear: left;
+}
+
+div.trackRemoveButton {
+    position: relative;
+    float: left;
+    width: 5%;
+    height: 38px;
+}
+
+div.trackRemoveButton input {
+    display: block;
+    margin: 8px auto 0 auto;
+    width: fit-content;
+}
+
+div.trackDetails {
+    float: left;
+    width: 95%;
+}
+
+textarea#tracksInput {
+    width: 90%;
+    resize: none;
+}

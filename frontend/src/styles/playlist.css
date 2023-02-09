@@ -1,0 +1,12 @@
+div.playlist {
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+.backgroundUL{
+    background-color: #1e322d;
+    padding: 20px;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}

@@ -1,0 +1,57 @@
+.container3{
+    width: 30%;
+    float: left;
+    height: 53vh;
+    background-color: #590004;
+    text-align: center;
+    padding-top: 22.5%;
+}
+.container4{
+    width: 70%;
+    display: inline-block;
+    height: 66.7vh;
+    background-color: #FCBA04;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.h1take2{
+    color: #250001;
+    margin: 20px;
+}
+
+.usernameInput{
+    width: 76%;
+    height: 60px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    width: 62%;
+}
+
+.emailInput{
+    width: 76%;
+    height: 60px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    width: 40%;
+}
+
+.passwordInput{
+    width: 76%;
+    height: 60px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+    width: 40%;
+    margin-left: 2%;
+}
+
+.submitB{
+    width: 35%;
+    height: 40px;
+    font-size: large;
+    border-radius: 15px;
+    border: none;
+}

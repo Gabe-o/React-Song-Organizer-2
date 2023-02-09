@@ -1,0 +1,62 @@
+.loginInput {
+    width: 76%;
+    height: 60px;
+    border-radius: 30px;
+    text-indent: 3%;
+    border: none;
+}
+
+.container1 {
+    padding-top: 15%;
+    height:68.9vh;
+    text-align: center;
+    float: left;
+    width: 70%;
+    display: inline-block;
+    background-color: #FCBA04;
+    overflow: hidden;
+}
+
+.container2{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    height: 59vh;
+    background-color: #590004;
+    padding-top: 20%;
+    overflow: hidden;
+}
+
+input::placeholder {
+    font-size: large;
+    text-align: center;
+}
+
+input[type='text']{
+    padding: left 50px;
+    font-size: 25px;
+}
+
+.loginB{
+    width: 35%;
+    height: 40px;
+    font-size: large;
+    border-radius: 15px;
+    border: none;
+}
+
+.loginButton {
+    display: inline-block;
+}
+
+.googleButton{
+    display: inline-block;
+}
+
+.Login{
+    color: #250001;
+}
+
+.h1take2{
+    padding-top: 60px;
+}
