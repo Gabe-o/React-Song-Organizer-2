@@ -26,7 +26,8 @@
     border-radius: 30px;
     text-indent: 3%;
     border: none;
-    width: 62%;
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 .emailInput{
@@ -35,7 +36,8 @@
     border-radius: 30px;
     text-indent: 3%;
     border: none;
-    width: 40%;
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 .passwordInput{
@@ -44,14 +46,22 @@
     border-radius: 30px;
     text-indent: 3%;
     border: none;
-    width: 40%;
-    margin-left: 2%;
+    width: 50%;
+    margin-bottom: 10px;
 }
 
 .submitB{
     width: 35%;
-    height: 40px;
+    margin: 0px 7.5%;
+    height: 60px;
     font-size: large;
-    border-radius: 15px;
+    border-radius: 30px;
     border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
 }
