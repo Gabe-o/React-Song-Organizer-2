@@ -3,3 +3,4 @@ data
 reactcert
 firebase.js
 .env
+api/.env
