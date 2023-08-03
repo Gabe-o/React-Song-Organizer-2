@@ -1,0 +1,7 @@
+.tracks-container {
+    display: flex;
+}
+
+.tracks-filters {
+    width: 20%;
+}

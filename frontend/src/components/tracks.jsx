@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import "../styles/homePage.css";
 import "../styles/track.css";
+import "../styles/tracksList.css";
 import Track from './track';
 
 function Tracks() {
@@ -71,19 +72,21 @@ function Tracks() {
     //returns search bar for tracks and displays results
     return (
         <div className='defaultMargin'>
-            <form onKeyDown={handleSubmit}>
-                <input className='inputSearch' type="text" name="track" onChange={handleChange} value={inputs.track || ""} placeholder="Search by Track" />
-                <input className='inputSearch' type="text" name="artist" onChange={handleChange} value={inputs.artist || ""} placeholder="Search by Artist" /><br />
-                <input className='inputSearch' type="text" name="album" onChange={handleChange} value={inputs.album || ""} placeholder="Search by Album" />
-                <input className='inputSearch' type="text" name="genre" onChange={handleChange} value={inputs.genre || ""} placeholder="Search by Genre" /><br />
-                <label className='inputLabel'>Similarity Search </label>
-                <input type="checkbox" name="similarity" onChange={handleCheckboxChange} value={inputs.similarity} /><br />
-                <label className='inputLabel'>Results </label>
-                <input className='inputNum' type="number" name="results" onChange={handleChange} value={inputs.results <= maxResults ? inputs.results || "" : maxResults} />
-            </form>
-            {
-                tracks.map((track) => <Track {...track} key={track.trackID} />)
-            }
+            <div className='tracks-container'>
+                <form class="tracks-filters"onKeyDown={handleSubmit}>
+                    <input className='inputSearch' type="text" name="track" onChange={handleChange} value={inputs.track || ""} placeholder="Search by Track" />
+                    <input className='inputSearch' type="text" name="artist" onChange={handleChange} value={inputs.artist || ""} placeholder="Search by Artist" /><br />
+                    <input className='inputSearch' type="text" name="album" onChange={handleChange} value={inputs.album || ""} placeholder="Search by Album" />
+                    <input className='inputSearch' type="text" name="genre" onChange={handleChange} value={inputs.genre || ""} placeholder="Search by Genre" /><br />
+                    <label className='inputLabel'>Similarity Search <input style={{margin: "0px", width: "fit-content"}} type="checkbox" name="similarity" onChange={handleCheckboxChange} value={inputs.similarity} /> </label>
+                    <label className='inputLabel'>Results <input className='inputNum' type="number" name="results" onChange={handleChange} value={inputs.results <= maxResults ? inputs.results || "" : maxResults} /></label>
+                </form>
+                <div style={{width: "78%"}}>
+                    {
+                        tracks.map((track) => <Track {...track} key={track.trackID} />)
+                    }
+                </div>
+            </div>
         </div>
     );
 }
