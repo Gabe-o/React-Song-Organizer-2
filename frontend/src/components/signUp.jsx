@@ -42,7 +42,7 @@ function SignUp() {
         const confirmPassword = inputs.confirmPassword;
 
         //gets all usernames
-        fetch("/api/open/usernames", {
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames", {
             method: "GET", headers: new Headers({ 'Content-Type': 'application/json' })
         })
             .then((res => res.json()))
@@ -76,7 +76,7 @@ function SignUp() {
                             const user = userCredential.user;
                             if (user != null) {
                                 //posts account info to database
-                                fetch("/api/open/usernames/insert", { method: "POST", body: JSON.stringify({ "username": username, "id": user.uid, "administrator": "false", "activated": "true" }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+                                fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames/insert", { method: "POST", body: JSON.stringify({ "username": username, "id": user.uid, "administrator": "false", "activated": "true" }), headers: new Headers({ 'Content-Type': 'application/json' }) })
                                     .then(res => res.json)
                                     .then(data => {
                                         console.log("Inserted user into database!");

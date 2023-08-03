@@ -20,7 +20,7 @@ function UserInfo(user) {
         }
 
         //posts toggled admin state
-        fetch("/api/admin/update/admin", { method: "POST", body: JSON.stringify({ "admin": tempState, "id": user.id }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/admin", { method: "POST", body: JSON.stringify({ "admin": tempState, "id": user.id }), headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 setAdminState(tempState);
@@ -43,7 +43,7 @@ function UserInfo(user) {
         }
 
         //posts toggled activation state
-        fetch("/api/admin/update/activation", { method: "POST", body: JSON.stringify({ "activation": tempState, "id": user.id }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/activation", { method: "POST", body: JSON.stringify({ "activation": tempState, "id": user.id }), headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 setActivationState(tempState);

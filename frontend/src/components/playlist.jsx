@@ -24,7 +24,7 @@ function Playlist(playlist) {
             const tracks = [];
             for (let c = 0; c < trackID.length; c++) {
                 //gets track info
-                await fetch("/api/open/tracks/" + trackID[c], { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+                await fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/tracks/" + trackID[c], { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
                     .then(res => res.json())
                     .then(data => {
                         tracks.push(data[0]);
@@ -40,7 +40,7 @@ function Playlist(playlist) {
 
     useEffect(() => {
         //gets playlist ratings
-        fetch("/api/open/playlists/rating/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/playlists/rating/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 setRating(data);
@@ -59,7 +59,7 @@ function Playlist(playlist) {
     const clickExpandReviewsButton = (event) => {
         if(!openReviewButton){
             //gets all reviews for a playlist
-            fetch("/api/open/playlists/review/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+            fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/playlists/review/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 if(data.length != 0){

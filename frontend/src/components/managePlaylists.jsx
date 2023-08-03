@@ -75,7 +75,7 @@ function ManagePlaylist() {
 
                 // Checking the db for tracks that match integers in the list and calculating the total duration
                 for (let id of trackIds) {
-                    await fetch("/api/open/tracks/" + id,
+                    await fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/tracks/" + id,
                         {
                             method: "GET",
                             headers: new Headers({
@@ -102,7 +102,7 @@ function ManagePlaylist() {
 
 
                 // Creating the new playlist
-                fetch("/api/secure/playlists",
+                fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists",
                     {
                         method: "POST",
                         body: JSON.stringify({
@@ -141,7 +141,7 @@ function ManagePlaylist() {
 
     // Gets this users playlist from the db
     const getPlaylists = (user) => {
-        fetch("/api/secure/playlists?user=" + user,
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists?user=" + user,
             {
                 method: "GET",
                 headers: new Headers({

@@ -26,7 +26,7 @@ function CreatePrivacyPolicy() {
 
   const createMarkup = () => {
     //posts new privacy policy to website
-    fetch("/api/admin/update/privacyPolicy", { method: "POST", body: JSON.stringify({ "html": DOMPurify.sanitize(convertedContent) }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+    fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/privacyPolicy", { method: "POST", body: JSON.stringify({ "html": DOMPurify.sanitize(convertedContent) }), headers: new Headers({ 'Content-Type': 'application/json' }) })
       .then(res => res.json())
       .then(data => {
         alert("Policy has been updated");

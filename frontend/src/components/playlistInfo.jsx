@@ -13,7 +13,7 @@ function PlaylistInfo(playlist) {
 
     useEffect(() => {
         //get all reviews for playlist
-        fetch("/api/admin/review/" + playlist.id ,{method: "GET", headers: new Headers({ 'Content-Type': 'application/json' })})
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/review/" + playlist.id ,{method: "GET", headers: new Headers({ 'Content-Type': 'application/json' })})
         .then(res => res.json())
         .then(data => {
             if(data.length != 0){
@@ -31,7 +31,7 @@ function PlaylistInfo(playlist) {
 
     useEffect(() => {
         //get ratings for playlist
-        fetch("/api/open/playlists/rating/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/playlists/rating/" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 setRating(data);

@@ -9,7 +9,7 @@ function AcceptableUsePolicy() {
 
     useEffect(() => {
         //gets acceptable use policy
-        fetch("/api/open/acceptableUsePolicy", { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/acceptableUsePolicy", { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 console.log(data);

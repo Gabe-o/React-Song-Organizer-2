@@ -23,7 +23,7 @@ function ChangeUsername() {
         const newUsername = inputs.username;
 
         //gets all current users
-        fetch("/api/open/usernames", { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames", { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 //if user inputted name is taken, then send
@@ -31,7 +31,7 @@ function ChangeUsername() {
                     alert("That username is taken!");
                 }
                 else { //put request to change username in mySQL database
-                    fetch("/api/secure/usernames/update/" + user.uid, { method: "PUT", body: JSON.stringify({ "username": newUsername }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+                    fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/usernames/update/" + user.uid, { method: "PUT", body: JSON.stringify({ "username": newUsername }), headers: new Headers({ 'Content-Type': 'application/json' }) })
                         .then(res => res.json())
                         .then(data => {
                             alert("Your username has been changed!");

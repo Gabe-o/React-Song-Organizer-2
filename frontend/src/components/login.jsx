@@ -8,7 +8,7 @@ function Login() {
 
     //sends and gets JSON Web Token between website and firebase
     const getJWT = (username) => {
-        fetch("/api/open/usernames/login",
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames/login",
             {
                 method: "POST",
                 headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -36,11 +36,11 @@ function Login() {
     const provider = new GoogleAuthProvider();
     const signInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
-                fetch("/api/open/usernames/" + auth.currentUser.uid, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+                fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames/" + auth.currentUser.uid, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
                     .then(res => res.json())
                     .then(data => {
                         if (data.length === 0 && auth.currentUser != null) {
-                            fetch("/api/open/usernames/insertGoogleUser", { method: "POST", body: JSON.stringify({ "username": auth.currentUser.displayName, "id": auth.currentUser.uid }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+                            fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames/insertGoogleUser", { method: "POST", body: JSON.stringify({ "username": auth.currentUser.displayName, "id": auth.currentUser.uid }), headers: new Headers({ 'Content-Type': 'application/json' }) })
                                 .then(res => res.json())
                                 .then(data => {
                                     getJWT(auth.currentUser.uid);
@@ -106,7 +106,7 @@ function Login() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 let user = userCredential.user;
-                fetch("/api/open/usernames/" + user.uid, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+                fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/usernames/" + user.uid, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
                     .then(res => res.json())
                     .then(data => {
                         // logged in successfully

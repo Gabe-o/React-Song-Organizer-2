@@ -15,7 +15,7 @@ function ReviewInfo(review){
     const [save, setSave] = useState(false);
 
     useEffect(() => {
-        fetch("/api/admin/dcma/" + review.reviewId, {method: "GET", headers: new Headers({ 'Content-Type': 'application/json' })})
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/dcma/" + review.reviewId, {method: "GET", headers: new Headers({ 'Content-Type': 'application/json' })})
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -38,7 +38,7 @@ function ReviewInfo(review){
         }
 
         //posts toggle for hidden review
-        fetch("/api/admin/update/review", { method: "POST", body: JSON.stringify({ "hidden": tempState, "reviewId": review.reviewId }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/review", { method: "POST", body: JSON.stringify({ "hidden": tempState, "reviewId": review.reviewId }), headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(res => res.json())
             .then(data => {
                 setHidden(tempState);
@@ -74,7 +74,7 @@ function ReviewInfo(review){
         
         setSave(true);
         
-        fetch("/api/admin/update/takedown/" + review.reviewId, {method: "POST", body: JSON.stringify({"takedown" : inputs.takedown}), headers: new Headers({ 'Content-Type': 'application/json' })})
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/takedown/" + review.reviewId, {method: "POST", body: JSON.stringify({"takedown" : inputs.takedown}), headers: new Headers({ 'Content-Type': 'application/json' })})
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -90,7 +90,7 @@ function ReviewInfo(review){
     const saveInfringement = () => {
         setSave(true);
         
-        fetch("/api/admin/update/infringement/" + review.reviewId, {method: "POST", body: JSON.stringify({"infringement" : inputs.infringement}), headers: new Headers({ 'Content-Type': 'application/json' })})
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/infringement/" + review.reviewId, {method: "POST", body: JSON.stringify({"infringement" : inputs.infringement}), headers: new Headers({ 'Content-Type': 'application/json' })})
         .then(res => res.json())
         .then(data => {
             setSave(false);
@@ -106,7 +106,7 @@ function ReviewInfo(review){
 
         setSave(true);
 
-        fetch("/api/admin/update/dispute/" + review.reviewId, {method: "POST", body: JSON.stringify({"dispute" : inputs.dispute}), headers: new Headers({ 'Content-Type': 'application/json' })})
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/admin/update/dispute/" + review.reviewId, {method: "POST", body: JSON.stringify({"dispute" : inputs.dispute}), headers: new Headers({ 'Content-Type': 'application/json' })})
         .then(res => res.json())
         .then(data => {
             setSave(false);

@@ -48,7 +48,7 @@ function EditPlaylist({ description, id, lastModified, username, name, numTracks
 
         // Fetches each track if it exist and calculations total duration for the playlist
         for (let id of trackIds) {
-            await fetch("/api/open/tracks/" + id,
+            await fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/tracks/" + id,
                 {
                     method: "GET",
                     headers: new Headers({
@@ -110,7 +110,7 @@ function EditPlaylist({ description, id, lastModified, username, name, numTracks
                 }
                 // Checks that all track ids entered are vaild
                 for (let id of trackIds) {
-                    await fetch("/api/open/tracks/" + id,
+                    await fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/tracks/" + id,
                         {
                             method: "GET",
                             headers: new Headers({
@@ -150,7 +150,7 @@ function EditPlaylist({ description, id, lastModified, username, name, numTracks
 
     // Saves the playlist ot the db
     const savePlaylist = (playlist) => {
-        fetch("/api/secure/playlists/" + playlist.id,
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists/" + playlist.id,
             {
                 method: "POST",
                 body: JSON.stringify({
@@ -212,7 +212,7 @@ function EditPlaylist({ description, id, lastModified, username, name, numTracks
         // If confirm is clicked proceed with deletion
         else if (event.target.value === "CONFIRM") {
             // Deletes playlist
-            fetch("/api/secure/playlists/" + id,
+            fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists/" + id,
                 {
                     method: "DELETE",
                     headers: new Headers({

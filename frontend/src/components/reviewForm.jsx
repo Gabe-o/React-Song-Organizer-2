@@ -30,14 +30,14 @@ function ReviewForm(playlist) {
         if (auth.currentUser != null) {
             if (buttonState) {
                 //checks to see if user already posted review
-                fetch("/api/secure/playlists/count?userId=" + auth.currentUser.uid + "&playlistId=" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+                fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists/count?userId=" + auth.currentUser.uid + "&playlistId=" + playlist.id, { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
                     .then(res => res.json())
                     .then(data => {
                         if (data[0].count > 0) {
                             alert("You have already submitted a review for this playlist!")
                         }
                         else { //if no review posted, then add review
-                            fetch("/api/secure/playlists/review", { method: "PUT", body: JSON.stringify({ "playlistId": playlist.id, "name": playlist.name, "user": auth.currentUser.uid, "rating": rating, "review": inputs.description, "date": moment().format('YYYY-MM-DD HH:mm:ss') }), headers: new Headers({ 'Content-Type': 'application/json' }) })
+                            fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/secure/playlists/review", { method: "PUT", body: JSON.stringify({ "playlistId": playlist.id, "name": playlist.name, "user": auth.currentUser.uid, "rating": rating, "review": inputs.description, "date": moment().format('YYYY-MM-DD HH:mm:ss') }), headers: new Headers({ 'Content-Type': 'application/json' }) })
                                 .then(res => res.json())
                                 .then(data => {
 

@@ -22,7 +22,7 @@ function Playlists() {
     const handleSubmit = (e) => {
         e.preventDefault();
         //gets playlist search results from user input
-        fetch("/api/open/playlists?name=" + (inputs.playlist !== undefined ? inputs.playlist : ""), { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
+        fetch(window.location.protocol+"//"+window.location.hostname+":9000/api/open/playlists?name=" + (inputs.playlist !== undefined ? inputs.playlist : ""), { method: "GET", headers: new Headers({ 'Content-Type': 'application/json' }) })
             .then(httpResp => {
                 return httpResp.json().then(data => {
                     if (httpResp.ok) {
