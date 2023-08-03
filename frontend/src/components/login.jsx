@@ -147,20 +147,19 @@ function Login() {
             <div className='container1'>
                 <h1 className='Login'>Log In</h1>
                 <form onSubmit={signIn}>
-                    <input className='loginInput' type="text" name="email" onChange={handleChange} placeholder="Email" value={inputs.email || ""} /><br></br><br></br>
-                    <input className='loginInput' type="password" name="password" onChange={handleChange} placeholder="Password" value={inputs.password || ""} /><br></br><br></br>
-                    <button type="submit" className='loginB'>Login</button>
+                    <input className='loginInput' type="text" name="email" onChange={handleChange} placeholder="Email" value={inputs.email || ""} style={{marginBlock: "10px"}} />
+                    <input className='loginInput' type="password" name="password" onChange={handleChange} placeholder="Password" value={inputs.password || ""} style={{marginBlock: "10px"}} />
+                    <button type="submit" className='loginB' style={{margin: " 10px 20.5%"}}>Login</button>
                 </form>
                 <h1 className='Login'>{emailEmptyError ? "Email empty " : " "} {passwordEmptyError ? "Password empty " : " "}</h1>
-                <br></br><br></br>
                 <h1 className='Login'>Or Log In With Google</h1>
-                <button className='loginB' onClick={signInWithGoogle}>Login With Google</button><br></br>
+                <button className='loginB' onClick={signInWithGoogle}>Login With Google</button>
             </div>
             <div className='container2'>
                 <h1>New User? Sign Up with Email Below</h1><br></br>
-                <button className='loginB' onClick={signUpPage}>Sign Up</button><br /><br /><br />
+                <button className='loginB' onClick={signUpPage} style={{marginLeft:"30%"}}>Sign Up</button>
                 <h1>Or Go Back To The Home Page</h1>
-                <button className='loginB' onClick={homePage}>Back to Home Page</button>
+                <button className='loginB' onClick={homePage} style={{marginLeft:"30%"}}>Back to Home Page</button>
             </div>
         </div>
     );

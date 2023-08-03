@@ -11,6 +11,7 @@ function SignUp() {
     const [inputs, setInputs] = useState({});
     const [emailEmptyError, setEmailError] = useState(false);
     const [passwordEmptyError, setPasswordError] = useState(false);
+    const [passwordNotConfirmedError, setPasswordNotConfirmedError] = useState(false);
     const [usernameEmptyError, setUsernameError] = useState(false);
     const [usernameTakenError, setUsernameTakenError] = useState(false);
     const [accountVerified, setAccountVerified] = useState(false);
@@ -32,11 +33,13 @@ function SignUp() {
         setPasswordError(false);
         setUsernameTakenError(false);
         setAccountVerified(false);
+        setPasswordNotConfirmedError(false);
 
         //user inputs
         const username = inputs.uname;
         const email = inputs.email;
         const password = inputs.password;
+        const confirmPassword = inputs.confirmPassword;
 
         //gets all usernames
         fetch("/api/open/usernames", {
@@ -62,6 +65,9 @@ function SignUp() {
                     }
                     if (password === undefined || password === "") {
                         setPasswordError(true);
+                    }
+                    if (password !== confirmPassword) {
+                        setPasswordNotConfirmedError(true);
                     }
                 }
                 else { //else, create username
@@ -115,19 +121,21 @@ function SignUp() {
                 <h1>Already have an account?</h1><br></br>
                 <button className='submitB' onClick={loginPage}>Back to Login</button>
             </div>
-            <div className='container4'>
+            <div className='flex-container'>
+                <div className='container4'>
                 <h1 className='h1take2'>Create an Account</h1>
                 <form onSubmit={signUp}>
                     <input type="text" className='usernameInput' name="uname" onChange={handleChange} value={inputs.uname || ""} placeholder="Enter Username"></input>
                     <input type="text" className='emailInput' name="email" onChange={handleChange} value={inputs.email || ""} placeholder="Enter Email"></input>
                     <input type="password" className='passwordInput' name="password" onChange={handleChange} value={inputs.password || ""} placeholder="Enter Password"></input>
-                    <input type="password" className='passwordInput' name="password" onChange={handleChange} value={inputs.password || ""} placeholder="Confirm Password"></input>
+                    <input type="password" className='passwordInput' name="confirmPassword" onChange={handleChange} value={inputs.confirmPassword || ""} placeholder="Confirm Password"></input>
                     <button className='submitB' type="submit">Submit</button>
                 </form>
-            </div>
+                </div>
 
-            <p>{emailEmptyError ? "Email empty " : " "} {passwordEmptyError ? "Password empty " : " "} {usernameEmptyError ? "Username empty " : " "}</p>
-            <p>{accountVerified ? "We have sent a verification email to " + inputs.email : ""}</p>
+                <div style={{color: "red", fontWeight: "bold", margin: "5px 20px", fontSize: "20px"}}>{emailEmptyError ? <p>{"Email empty"}</p> : ""} {passwordEmptyError ? <p>{"Password empty"}</p> : ""} {passwordNotConfirmedError ? <p>{"Passwords don't match"}</p> : ""} {usernameEmptyError ? <p>{"Username empty"}</p> : ""}</div>
+                <p>{accountVerified ? "We have sent a verification email to " + inputs.email : ""}</p>
+            </div>
         </div>
     );
 }
