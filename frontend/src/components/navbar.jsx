@@ -95,24 +95,21 @@ function Navbar() {
                         <li>
                             <button className="navBarB" onClick={policiesButton}>Policies</button>
                         </li>
-                        <li>
-                            {auth.currentUser != null ? <button className="navBarB" onClick={manageAccountButton}>Manage Account</button> : null}
-                        </li>
-                        <li>
-                            {auth.currentUser != null ? <button className="navBarB" onClick={managePlaylistButton}>Create/Edit Playlist</button> : null}
-                        </li>
-                        <li>
-                            {((auth.currentUser != null) && hasAdmin) ? <button className="navBarB" onClick={manageUsersButton}>Edit Users</button> : null}
-                        </li>
-                        <li>
-                            {((auth.currentUser != null) && hasAdmin) ? <button className="navBarB" onClick={manageReviewsButton}>Edit Reviews</button> : null}
-                        </li>
-                        <li>
-                            {((auth.currentUser != null) && hasAdmin) ? <button className="navBarB" onClick={DMCAButton}>Manage Policies</button> : null}
-                        </li>
-                        <li>
-                            {auth.currentUser === null ? <button className="navBarB" onClick={loginButton}>Login</button> : <Logout />}
-                        </li>
+                            {auth.currentUser != null ? <li><button className="navBarB" onClick={manageAccountButton}>Manage Account</button></li> : null}
+                        
+                            {auth.currentUser != null ? <li><button className="navBarB" onClick={managePlaylistButton}>Create/Edit Playlist</button></li> : null}
+                        
+                            {((auth.currentUser != null) && hasAdmin) ? <li><button className="navBarB" onClick={manageUsersButton}>Edit Users</button></li> : null}
+                        
+                        
+                            {((auth.currentUser != null) && hasAdmin) ? <li><button className="navBarB" onClick={manageReviewsButton}>Edit Reviews</button></li> : null}
+                        
+                        
+                            {((auth.currentUser != null) && hasAdmin) ? <li><button className="navBarB" onClick={DMCAButton}>Manage Policies</button></li> : null}
+                        
+                        
+                            {auth.currentUser === null ? <li><button className="navBarB" onClick={loginButton}>Login</button></li> : <li><Logout /></li>}
+                        
                     </ul>
                 </div>
             </nav> <br></br><br></br>
